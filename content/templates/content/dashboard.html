@@ -1,0 +1,187 @@
+{% load static %}
+{%block content %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,600,700,700i&amp;subset=latin-ext"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="{%static 'css/styles.css'%}" rel="stylesheet">
+    <link rel="icon" href="img/govt-logo.png">
+
+    <title>Dashboard | Competency Mapping | LSGD Kerala</title>
+</head>
+
+<body>
+    <div class="page-container">
+        <nav class="navbar navbar-dash navbar-dark fixed-top">
+            <a class="navbar-brand logo-image logo-text logo-pad" href="index.html">
+                <img src="{% static 'img/govt-logo.png' %}"> <span>LSGD Kerala</span>
+            </a>
+            <ul class="profile-dash">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle page-scroll" id="navbarDropdown" role="button"
+                        aria-haspopup="true" aria-expanded="false"><img src="img/job_jacob/job_jacob.png" width="25"
+                            height="25" style="border-radius: 50%;">&nbsp;&nbsp;{{ user.username }}</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="profile.html"><span class="item-text">My Profile</span></a>
+                        <div class="dropdown-items-divide-hr"></div>
+                        <a class="dropdown-item" href="leave_status.html"><span class="item-text">Leave
+                                Status</span></a>
+                        <div class="dropdown-items-divide-hr"></div>
+                        <a class="dropdown-item" href="{% url 'logout' %}"><span class="item-text">Logout</span></a>
+                    </div>
+                </li>
+            </ul>
+
+
+
+
+        </nav>
+
+
+        <div class=container-fluid>
+            <div class="row">
+                <div class="col-lg-3 col-xl-2 sidebar sidebar-links">
+                    <nav>
+                        <h4><i class="fas fa-tachometer-alt"></i>&nbsp;&nbsp;Dashboard</h4>
+                        <ul>
+                            <li><i class="fa fa-angle-right right-pointer"></i> <a href="team_dashboard.html"><span
+                                        class="active">Team Analysis&nbsp;&nbsp;<i
+                                            class="fas fa-chart-bar"></i></span></a></li>
+                            <li><i class="fa fa-angle-right right-pointer"></i> <a href="sector_dashboard.html">Sector
+                                    Analysis&nbsp;&nbsp;<i class="fas fa-chart-line"></i></a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-8 col-xl-9" style="padding-top: 100px;">
+
+
+                    <div class="row dept-div dept-div-margin">
+
+
+
+
+                        <!-- <div class="col-xl-2 dept-icon-div-style">
+                            <i class="fas fa-baby dept-icon-style"></i>
+                            <h6>Birth Certificate</h6>
+                            <p>Apps. from prev. week: 30</p>
+                            <p>New applications: 100</p>
+                            <p>Verification in progess: 90</p>
+                            <p>Verification Complete: 40</p>
+                        </div> -->
+
+
+                        <div class="widget widget-usage col-lg-3">
+                            <p style="font-size: 14px;"><b>Total apps. entered: {{ C1 }}</b></p>
+                            <div class="bar-scroll">
+
+                                <ul class="widget-ul-style span4">
+                                    {% for i,V in D1.items %}
+                                    <li>
+                                        <p>
+                                            <strong class="bar-name-size">{{  V.Name }}</strong>
+                                            <span class="small muted">(entered apps.{{ V.PN }} )</span>
+                                        </p>
+                                        <div class="progress tight">
+                                            <div class="bar-blue" style="width: {{V.PN}}% ">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+
+                            </div>
+                        </div>
+
+                        <div class="widget widget-usage col-lg-3">
+                            <p style="font-size: 14px;"><b>Total apps. in verification stage: {{ C2 }}</b></p>
+                            <div class="bar-scroll">
+                                {% for i,V in D2.items %}
+                                <ul class="widget-ul-style span4">
+                                    <li>
+                                        <p>
+                                            <strong class="bar-name-size">{{  V.Name }}</strong> <span
+                                                class="small muted">(verifying {{ V.PN }} apps.)</span>
+                                        </p>
+                                        <div class="progress tight">
+                                            <div class="bar-green" style="width: {{ V.PN }}%;">
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="widget widget-usage col-lg-3">
+                            <p style="font-size: 14px;"><b>Total apps. verified: {{ C3 }}</b></p>
+                            <div class="bar-scroll">
+                                {% for i,V in D3.items %}
+                                <ul class="widget-ul-style span4">
+                                    <li>
+                                        <p>
+                                            <strong class="bar-name-size">{{  V.Name }}</strong> <span
+                                                class="small muted">(verified {{ V.PN }} apps.)</span>
+                                        </p>
+                                        <div class="progress tight">
+                                            <div class="bar-red" style="width: {{ V.PN }}%;">
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                {% endfor %}
+                            </div>
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+        <footer id="footer-dash" style="position: absolute; bottom: 0; width: 100%;">
+            <div class="container">
+                <div class="copyright">
+                    <p class="centered"><i class="far fa-copyright"></i> Local Self Government Department,
+                        Government of
+                        Kerala</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+{% endblock content %}
