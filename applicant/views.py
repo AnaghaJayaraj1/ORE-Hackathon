@@ -4,9 +4,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate
 from .models import Applicant_details, Feedback
 
-import joblib
 import pandas as pd
-#reloadModel = joblib.load('')
 
 
 def applicant_login(request):
@@ -19,7 +17,7 @@ def applicant_login(request):
 
     
         if Applicant_details.objects.filter(application_no=appno, phone_no=phno):
-            return redirect('applicant_home')
+            return render(request, 'applicant_home.html')
         
         else:
             messages.info(request, 'Invalid Credentials')
@@ -40,23 +38,18 @@ def applicant_logout(request):
 
 
 def feedback(request):
-    return render(request, 'feedback.html')
-
-
-def suggestcourse(request):
-    print (request)
     if request.method == 'POST':
-        temp={}
-        temp['empid']=request.POST.get('one')
-        temp['commskill']=request.POST.get('two')
-        temp['ethics']=request.POST.get('three')
-        temp['knowledge']=request.POST.get('four')
-        temp['listen']=request.POST.get('five')
-        temp['job']=request.POST.get('six')
-        temp['overall']=request.POST.get('seven')
+
+        one= request.POST.get('one')
+        two= request.POST.get('two')
+        three= request.POST.get('three')
+        four= request.POST.get('four')
+        five= request.POST.get('five')
+        six= request.POST.get('six')
 
 
-    testData=pd.DataFrame(['x':temp]).transpose()
-    scoreval = reloadModel.predict(testData)[0]
-    context={'scoreval':scoreval}
-    return render(request,'feedback.html')
+        fb_values = Feedback.objects.create(one=one,two=two,three=three,four=four,five=five,six=six)
+        fb_values.save()
+        return render(request, 'feedback.html')
+    else:
+        return render (request, 'feedback.html')
