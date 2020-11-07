@@ -4,6 +4,10 @@ from django.contrib import messages
 from django.contrib.auth import authenticate
 from .models import Applicant_details, Feedback
 
+import joblib
+import pandas as pd
+#reloadModel = joblib.load('')
+
 
 def applicant_login(request):
     if request.method == 'POST':
@@ -36,9 +40,23 @@ def applicant_logout(request):
 
 
 def feedback(request):
-    context = {'a':'HelloWorld'}
-    return render(request, 'feedback.html',context)
+    return render(request, 'feedback.html')
 
 
 def suggestcourse(request):
-    return None
+    print (request)
+    if request.method == 'POST':
+        temp={}
+        temp['empid']=request.POST.get('one')
+        temp['commskill']=request.POST.get('two')
+        temp['ethics']=request.POST.get('three')
+        temp['knowledge']=request.POST.get('four')
+        temp['listen']=request.POST.get('five')
+        temp['job']=request.POST.get('six')
+        temp['overall']=request.POST.get('seven')
+
+
+    testData=pd.DataFrame(['x':temp]).transpose()
+    scoreval = reloadModel.predict(testData)[0]
+    context={'scoreval':scoreval}
+    return render(request,'feedback.html')
