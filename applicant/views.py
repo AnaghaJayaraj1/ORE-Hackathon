@@ -9,23 +9,20 @@ def applicant_login(request):
     if request.method == 'POST':
         appno = request.POST.get('application_no')
         phno = request.POST.get('phone_no')
-     
+       
         print(appno)
         print(phno)
 
     
         if Applicant_details.objects.filter(application_no=appno, phone_no=phno):
-          
-        
             return redirect('applicant_home')
         
         else:
             messages.info(request, 'Invalid Credentials')
-            
 
-    else:
 
-        return render(request, 'applicant_login.html')
+
+    return render(request, 'applicant_login.html')
 
 
 

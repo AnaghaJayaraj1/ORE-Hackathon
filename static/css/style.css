@@ -45,6 +45,10 @@ body, html {
 	text-align: center;
 }
 
+.login-btn{
+	width: 100%;
+}
+
 .login-btn:hover {
 	background-color: #0dabbf;
 	border-color: #0dabbf;
