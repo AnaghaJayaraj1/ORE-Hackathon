@@ -17,7 +17,7 @@
     <link href="{%  static  'css/style.css'  %}" rel="stylesheet">
     <link rel="icon"   href="{%  static  'css/style.css'  %}">
 
-    <title>Dashboard | Competency Mapping | LSGD Kerala</title>
+    <title>ORE | Feedback</title>
     <link href="{%  static  'css/newstyle.css'  %}" rel="stylesheet" type="text/css" />
 
   </head>
@@ -29,12 +29,8 @@
         </a>
         <ul class="profile-dash">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle page-scroll" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="{% static 'images/govt-logo.png' %}" width="25" height="25" style="border-radius: 50%;">&nbsp;&nbsp;Job Jacob</a>
+            <a class="nav-link dropdown-toggle page-scroll" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="{% static 'images/govt-logo.png' %}" width="25" height="25" style="border-radius: 50%;">&nbsp;&nbsp;Logout</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="content/profile"><span class="item-text">My Profile</span></a>
-                <div class="dropdown-items-divide-hr"></div>
-                <a class="dropdown-item" href="leave_status.html"><span class="item-text">Leave Status</span></a>
-                <div class="dropdown-items-divide-hr"></div>
                 <a class="dropdown-item" href="/applicant/logout"><span class="item-text">Logout</span></a>
             </div>
           </li>
@@ -58,7 +54,7 @@
                 
             <div>
               <div class="applicant"></div>
-              <form method="POST">
+              <form method="POST" enctype="multipart/form-data" action="suggestcourse">
                 {% csrf_token %}
 
 
@@ -68,6 +64,19 @@
                     <input type="text" name="four"  size="100"placeholder="If you tried contacting us before visiting, was it easy?"><br><br>
                     <input type="text" name="five" size="100"  placeholder="Did the employee do a good job?"><br><br>
                     <input type="test" name="six" size="100" placeholder="How would you rate the overall experience"><br><br>
+
+                
+                    <div class="col-md-4 col-sm-4"><label for="fname">Employee ID</label> </div> <input type="text" id="fname" name="hrsPwrVal" value={{temp.horsepower}}><br><br>
+                    <div class="col-md-4 col-sm-4"><label for="fname">Communication Skill(1-10):</label> </div> <input name="cylinderVal" type="text" value={{temp.cylinders}}><br><br>
+                    <div class="col-md-4 col-sm-4"><label for="lname">Moral Ethics(1-10):</label> </div> <input type="text" id="lname" name="dispVal" value={{temp.displacement}}><br><br>
+                    <div class="col-md-4 col-sm-4"><label for="lname">Knowledge Level(1-10):</label> </div> <input type="text" id="lname" name="weightVal" value={{temp.weight}}><br><br>
+                    <div class="col-md-4 col-sm-4"><label for="fname">Patient Listening(1-10):</label></div>  <input type="text" id="fname" name="accVal" value={{temp.acceleration}}><br><br>
+                    <div class="col-md-4 col-sm-4"><label for="lname">Overall working standard(1-10):</label> </div> <input type="text" id="lname" name="modelVal" value={{temp.model_year}}><br><br>
+                    <div class="col-md-4 col-sm-4"><label for="lname">Level of satisfaction(1-10):</label> </div> <input type="text" id="lname" name="originVal" value={{temp.origin}}><br><br>
+
+
+
+
                     <div style="text-align: left;">
                         <button type="submit" class="btn btn-primary login-btn">SEND</button><br>
                       </div>
@@ -87,7 +96,7 @@
       <footer id="footer-dash" style="position: absolute; bottom: 0; width: 100%;">
         <div class="container">
           <div class="copyright">
-            <p class="centered"><i class="far fa-copyright"></i> Local Self Government Department, Government of Kerala</p>
+            <p class="centered"><i class="far fa-copyright"></i> E-Governance, ORE Hackathon</p>
           </div>
         </div>
       </footer>

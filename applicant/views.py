@@ -30,23 +30,15 @@ def applicant_home(request):
     return render(request, 'applicant_home.html')
 
 
-def applicant_feedback(request):
-    if request.method == 'POST':
-
-        one= request.POST.get('one')
-        two= request.POST.get('two')
-        three= request.POST.get('three')
-        four= request.POST.get('four')
-        five= request.POST.get('five')
-        six= request.POST.get('six')
-
-
-        fb_values = Feedback.objects.create(one=one,two=two,three=three,four=four,five=five,six=six)
-        fb_values.save()
-        return render(request, 'feedback.html')
-    else:
-        return render (request, 'feedback.html')
-
 
 def applicant_logout(request):
     return render(request, 'logout.html')
+
+
+def feedback(request):
+    context = {'a':'HelloWorld'}
+    return render(request, 'feedback.html',context)
+
+
+def suggestcourse(request):
+    return None
