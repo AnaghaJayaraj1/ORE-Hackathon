@@ -1,0 +1,93 @@
+{%load static%}
+	
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+  <link rel="stylesheet"  href="{%  static  'css/profile.css'  %}">
+
+
+
+<title>PROFILE</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,600,700,700i&amp;subset=latin-ext"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link href="{%  static  'css/profile.css'  %}" rel="stylesheet">
+  <link href="{%  static  'css/profile.css'  %}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div class="page-container">
+     <nav class="navbar navbar-dash navbar-dark fixed-top">
+       <ul class="profile-dash">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle page-scroll" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="{% static 'images/header-teamwork.svg' %}" width="25" height="25" style="border-radius: 50%;">&nbsp;&nbsp;Job Jacob</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="profile"><span class="item-text">My Profile</span></a>
+                <div class="dropdown-items-divide-hr"></div>
+                <a class="dropdown-item" href="leave_status.html"><span class="item-text">Leave Status</span></a>
+                <div class="dropdown-items-divide-hr"></div>
+                <a class="dropdown-item" href="logout.html"><span class="item-text">Logout</span></a>
+            </div>
+          </li>
+        </ul>
+     </nav>
+  </div>
+  <div class="wrapper">
+    <div class="left">
+      <img src ="{% static 'images/govt-logo.png' %}" alt="user" width="100"> 
+      <h4>JOB JACOB</h4>
+      <p>SECRETARY</p>
+      <p>Mookkannoor Grama Panchayath</p>
+      <p>www.lsgdmknr.gov.in</p>
+    </div>
+    <div class="right">
+      <div class="info">
+        <h3><br>INFORMATION</h3>
+        <div class="info_data">
+          <div class="data">
+            <h4>EMAIL</h4>
+            <p>jobjacob@gmail.com</p>
+          </div>
+          <div class="data">
+            <h4>CONTACT NUMBER</h4>
+            <p>0123456789</p>
+            <h4>ADDRESS</h4>
+            <p>abc,Ernakulam</p>
+          </div>
+        </div>
+      </div>
+      <div class="projects">
+        <h3>PROJECTS</h3>
+        <div class="project_data">
+          <div class="data">
+            <h4>RECENT</h4>
+            <p><br>BIRTH REGISTRATION
+            <br>MARRIAGE REGISTRATION
+            <br>DEATH REGISTRATION
+            <br>LICENSE<br></p>
+          </div>
+          <div class="data">
+            <h4>MOST DONE</h4> 
+            <p>LICENSE</p>
+            <h4>WORK DATA</h4>
+            <p><br>No.of projects entered                 : 245
+            <br>No.of projects on verification stage   : 100
+            <br>No.of projects verified                : 145</p>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
