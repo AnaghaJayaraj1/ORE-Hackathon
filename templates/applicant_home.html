@@ -1,0 +1,100 @@
+
+{%load static%}
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet"  href="{%  static  'css/newstyle.css'  %}">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,600,700,700i&amp;subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="{%  static  'css/style.css'  %}" rel="stylesheet">
+    <link rel="icon"   href="{%  static  'css/style.css'  %}">
+
+    <title>Dashboard | Competency Mapping | LSGD Kerala</title>
+    <link href="{%  static  'css/newstyle.css'  %}" rel="stylesheet" type="text/css" />
+
+  </head>
+  <body>
+    <div class="page-container">
+      <nav class="navbar navbar-dash navbar-dark fixed-top">
+        <a class="navbar-brand logo-image logo-text logo-pad" href="login.html">
+          <img src="{% static 'img/govt-logo.png' %}"> <span>ARTHASHASTRA</span>
+        </a>
+        <ul class="profile-dash">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle page-scroll" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="{% static 'images/govt-logo.png' %}" width="25" height="25" style="border-radius: 50%;">&nbsp;&nbsp;Job Jacob</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="profile"><span class="item-text">My Profile</span></a>
+                <div class="dropdown-items-divide-hr"></div>
+                <a class="dropdown-item" href="leave_status.html"><span class="item-text">Leave Status</span></a>
+                <div class="dropdown-items-divide-hr"></div>
+                <a class="dropdown-item" href="/applicant/logout"><span class="item-text">Logout</span></a>
+            </div>
+          </li>
+        </ul>
+
+
+
+
+      </nav> 
+
+
+      <div class=container-fluid>
+        <div class="row">
+            <div class="col-lg-3 col-xl-2 sidebar sidebar-links">
+              <nav>
+                <h4><i class="fas fa-tachometer-alt"></i>&nbsp;&nbsp;Dashboard</h4>
+                  <ul>
+                    <li><i class="fa fa-angle-right right-pointer"></i> <a href="/applicant/applicant_home/"><span class="active">APPLICATION STATUS&nbsp;&nbsp;</a></span></li>
+                    <li><i class="fa fa-angle-right right-pointer"></i> <a href="/applicant/applicant_feedback/">FEEDBACK&nbsp;&nbsp;</a></li>
+                  </ul>
+              </nav>
+            </div>
+            <div class="col-lg-8 col-xl-9" style="padding-top: 100px;">
+              
+                
+            <div>
+              <section class="timeline-area">
+ <div class="timeline">
+   <h3>Your application is entered</h3>
+ </div>
+ <div class="timeline" >
+   <h3>Your application is verifying</h3>
+ </div>
+ <div class="timeline">
+   <h3>Your application is verified</h3>
+ </div>
+ <div class="timeline">
+   <h3> Application received by you</h3>
+ </div>
+
+</section>
+        </div>
+            </div>
+        </div>
+
+      </div>
+      <footer id="footer-dash" style="position: absolute; bottom: 0; width: 100%;">
+        <div class="container">
+          <div class="copyright">
+            <p class="centered"><i class="far fa-copyright"></i> Local Self Government Department, Government of Kerala</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+
+  </html>
